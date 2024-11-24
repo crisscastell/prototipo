@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Psicologa Odalis Avila</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Opciones</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Pacientes
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="pacientes.html">Agregar paciente</a></li>
+                    <li><a class="dropdown-item" href="formularioMotivo.html">Agregar motivos de consultas</a></li>
+                    <li><a class="dropdown-item" href="plantilla.html">Crear plantillas</a></li>
+                    <li><a class="dropdown-item" href="#">Agendar Cita</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    
+                  </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Salir</a>
+                  </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <style> .note-container { max-width: 800px; margin: 20px auto; padding: 20px; background-color:#343a40; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); } 
+     .note { padding: 15px; margin-bottom: 15px; background-color: #ecf9ff; border-left: 5px solid #a8b9cc; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); position: relative; } 
+     .note h5 { margin-top: 0; color: #000000; } .delete-btn { position: absolute; top: 10px; right: 10px; color: #ff5c5c; cursor: pointer; }
+     .bg-dark { background-color: #343a40 !important; } .scrollable { max-height: 300px;
+      overflow-y: scroll; padding: 20px; border-radius: 5%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } 
+      .text-center{color: #ffffff;}
+      
+      </style>
+</head>
+<body>
+    
+    
+    <div class="container"> <div class="content"> 
+        <center><h1>Historiales Médicos</h1></center> 
+     <center><h3>Bienvenido<h3></center>
+        <center><h1>Sistema de Historiales Médicos</h1></center>
+     <div class="container note-container">
+         <h2 class="text-center">Notas y Recordatorios</h2> <form id="noteForm"> 
+            <div class="form-group">
+                 <label for="noteTitle" class="text-center">Título</label> 
+                 <input type="text" class="form-control" id="noteTitle" placeholder="Introduce un título" required>
+            </div>
+            <div class="form-group"> 
+                <label for="noteContent" class="text-center">Contenido</label> 
+                <textarea class="form-control" id="noteContent" rows="3" placeholder="Escribe tu nota aquí" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Añadir Nota</button>
+        </form> <hr> <div id="notesContainer"> <!-- Las notas añadidas aparecerán aquí --> </div>
+         
+         <div id="">
+            <div class="row">
+                <div class="col-md-5 mx-auto color text-white scrollable">
+                    <h2>Citas Agendadas</h2> 
+                    <p id="parrafo1" class="editable" contenteditable="true">martes 9am luis diaz</p> 
+                    <p id="parrafo1" class="editable" contenteditable="true">Martes 10am</p>
+                    <p id="parrafo1" class="editable" contenteditable="true">Martes 1pm</p> 
+         </h2>
+         <p id="parrafo1" class="editable" contenteditable="true">Martes 8am</p>
+         <p id="parrafo1" class="editable" contenteditable="true">Miercoles 3pm</p> 
+         <p id="parrafo1" class="editable" contenteditable="true">Jueves 9am</p> 
+         <p id="parrafo1" class="editable" contenteditable="true">viernes 2pm</p>
+                </div>
+                    <div class="col-md-5 mx-auto  text-white scrollable"> 
+                        <h2>Horarios Disponibles</h2> 
+                            <p id="parrafo1" class="editable" contenteditable="true">Martes 11 am</p>
+                            <p id="parrafo1" class="editable" contenteditable="true">Miercoles 9am</p>
+                            <p id="parrafo1" class="editable" contenteditable="true">Miercoles 1pm</p>
+                            <p id="parrafo1" class="editable" contenteditable="true">Miecoles 4pm</p> 
+                            <p id="parrafo1" class="editable" contenteditable="true">Jueves 11 am</p>
+                            <p id="parrafo1" class="editable" contenteditable="true">Viernes 2pm</p>
+                    </div>
+                </div> </div>
+          <footer> <p>&copy; 2024 Sistema de Historiales Médicos. Todos los derechos reservados.</p> </footer>
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+          <script> document.getElementById('noteForm').addEventListener('submit', function(event) { event.preventDefault(); const title = document.getElementById('noteTitle').value; const content = document.getElementById('noteContent').value; if (title && content) { const noteContainer = document.getElementById('notesContainer'); const noteElement = document.createElement('div'); noteElement.className = 'note'; noteElement.innerHTML = `<h5>${title}</h5><p>${content}</p>`; noteContainer.appendChild(noteElement);  document.getElementById('noteForm').reset(); } }); </script>
+</body>
+
+</html>

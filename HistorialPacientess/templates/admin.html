@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Identificación</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .result-container {
+            margin-top: 20px;
+            background-color: #e9f7fd;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1 class="form-title">Datos de Identificación</h1>
+    <form id="identificacionForm">
+        <div class="form-group">
+            <label for="nombre">Nombre y Apellido</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="cedula">Cédula</label>
+            <input type="text" id="cedula" name="cedula" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        </div>
+        <div class="form-group">
+            <label for="grado_instruccion">Grado de Instrucción</label>
+            <select id="grado_instruccion" name="grado_instruccion" required>
+                <option value="">Seleccione una opción</option>
+                <option value="primaria">Primaria</option>
+                <option value="secundaria">Secundaria</option>
+                <option value="universitaria">Universitaria</option>
+                <option value="postgrado">Postgrado</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    <div class="result-container" id="resultContainer">
+        <h3>Datos Añadidos</h3>
+        <p><strong>Nombre y Apellido:</strong> <span id="resultNombre"></span></p>
+        <p><strong>Cédula:</strong> <span id="resultCedula"></span></p>
+        <p><strong>Fecha de Nacimiento:</strong> <span id="resultFechaNacimiento"></span></p>
+        <p><strong>Grado de Instrucción:</strong> <span id="resultGradoInstruccion"></span></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('identificacionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Capturar los valores del formulario
+        const nombre = document.getElementById('nombre').value;
+        const cedula = document.getElementById('cedula').value;
+        const fechaNacimiento = document.getElementById('fecha_nacimiento').value;
+        const gradoInstruccion = document.getElementById('grado_instruccion').value;
+
+        // Mostrar los valores capturados
+        document.getElementById('resultNombre').textContent = nombre;
+        document.getElementById('resultCedula').textContent = cedula;
+        document.getElementById('resultFechaNacimiento').textContent = fechaNacimiento;
+        document.getElementById('resultGradoInstruccion').textContent = gradoInstruccion;
+
+        // Mostrar el contenedor de resultados
+        document.getElementById('resultContainer').style.display = 'block';
+
+        // Limpiar el formulario
+        document.getElementById('identificacionForm').reset();
+    });
+</script>
+
+</body>
+</html>
